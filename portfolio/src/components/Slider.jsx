@@ -6,7 +6,7 @@ import { sliderItems } from '../data';
 
 const Container = styled.div`
   width: 100%;
-  height: 40vh;
+  height: 85vh;
   display: flex;
   position: relative;
   overflow: hidden;
@@ -24,6 +24,7 @@ const Arrow = styled.div`
   align-items: center;
   justify-content: center;
   position: absolute;
+  padding-bottom: 30px;
   top: 0;
   bottom: 0;
   left: ${(props) => props.direction === 'left' && '5px'};
@@ -46,44 +47,51 @@ const Wrapper = styled.div`
 
 const Slide = styled.div`
   width: 100vw;
-  height: 40vh;
+  height: 85vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #${(props) => props.bg};
   @media screen and (min-width: 768px) {
     height: 100vh;
+    flex-direction: row;
   }
 `;
 
 const ImgContainer = styled.div`
-  flex: 1;
-  //height: 100%auto;
+  @media screen and (min-width: 768px) {
+    flex: 1;
+  }
 `;
 
 const Image = styled.img`
-  height: 100px;
-  padding-left: 50px;
+  height: 225px;
   @media screen and (min-width: 768px) {
     height: 350px;
+    padding-left: 50px;
   }
 `;
 const InfoContainer = styled.div`
-  flex: 1;
-  padding: 5px;
+  @media screen and (min-width: 768px) {
+    flex: 1;
+    padding-left: 25px;
+    padding-right: 20px;
+  }
 `;
 
 const Title = styled.h1`
   font-size: 25px;
-  color: #ffffffe0;
+  color: white;
+  padding-right: 10px;
   @media screen and (min-width: 768px) {
     font-size: 70px;
   }
 `;
 const Description = styled.p`
-  max-width: 120px;
+  max-width: 200px;
   margin: 10px 0px;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 500;
   letter-spacing: 2px;
   color: #ffffffe0;
@@ -97,13 +105,16 @@ const Description = styled.p`
   }
 `;
 const Button = styled.button`
-  width: 80px;
+  width: 225px;
+  height: 30px;
   padding: 2px;
+  margin-top: 10px;
   font-size: 15px;
-  border: 2px solid #6ebedcdf;
+  border: 1px solid #ffc022df;
+  font-weight: 600;
   border-radius: 5px;
-  background-color: #6ebedcdf;
-  color: #ffffffe0;
+  background-color: white;
+  color: #ed6a5e;
   cursor: pointer;
   @media screen and (min-width: 768px) {
     padding: 10px;
@@ -116,7 +127,7 @@ const Slider = () => {
 
   const handleClick = (direction) => {
     if (direction === 'left') {
-      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 3);
     } else {
       setSlideIndex(slideIndex < 3 ? slideIndex + 1 : 0);
     }
@@ -136,7 +147,7 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Description>{item.description}</Description>
-              <Button>Ver más</Button>
+              <Button>See more</Button>
             </InfoContainer>
           </Slide>
         ))}

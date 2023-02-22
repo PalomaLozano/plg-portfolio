@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Logo from '../assets/logo.png';
 import { FaBars } from 'react-icons/fa';
@@ -122,55 +123,58 @@ const Navbar = () => {
   const white = {
     color: 'white',
   };
-
   return (
-    <Container>
-      <Wrapper>
-        <LogoContainer>
-          <Image src={Logo} />
-        </LogoContainer>
-        <Mobile onClick={() => setShowMobileMenu(!showMobileMenu)}>
-          <FaBars style={style} />
-        </Mobile>
-        <Menu open={showMobileMenu}>
-          <MenuItem>
-            <MenuItemLink>
-              <a href="#" style={white}>
-                Home
-              </a>
-            </MenuItemLink>
-          </MenuItem>
-          <MenuItem>
-            <MenuItemLink>
-              <a href="#" style={white}>
-                Web Development
-              </a>
-            </MenuItemLink>
-          </MenuItem>
-          <MenuItem>
-            <MenuItemLink>
-              <a href="#" style={white}>
-                Graphic Design
-              </a>
-            </MenuItemLink>
-          </MenuItem>
-          <MenuItem>
-            <MenuItemLink>
-              <a href="#" style={white}>
-                Photography Projects
-              </a>
-            </MenuItemLink>
-          </MenuItem>
-          <MenuItem>
-            <MenuItemLink>
-              <a href="#" style={white}>
-                Contact
-              </a>
-            </MenuItemLink>
-          </MenuItem>
-        </Menu>
-      </Wrapper>
-    </Container>
+    <>
+      <Container>
+        <Wrapper>
+          <LogoContainer>
+            <Link to="/">
+              <Image src={Logo} />
+            </Link>
+          </LogoContainer>
+          <Mobile onClick={() => setShowMobileMenu(!showMobileMenu)}>
+            <FaBars style={style} />
+          </Mobile>
+          <Menu open={showMobileMenu}>
+            <MenuItem>
+              <MenuItemLink>
+                <Link to="/" style={white}>
+                  Home
+                </Link>
+              </MenuItemLink>
+            </MenuItem>
+            <MenuItem>
+              <MenuItemLink>
+                <Link to="/webdevelopment" style={white}>
+                  Web Development
+                </Link>
+              </MenuItemLink>
+            </MenuItem>
+            <MenuItem>
+              <MenuItemLink>
+                <Link to="/graphicdesign" style={white}>
+                  Graphic Design
+                </Link>
+              </MenuItemLink>
+            </MenuItem>
+            <MenuItem>
+              <MenuItemLink>
+                <Link to="/photography" style={white}>
+                  Photography Projects
+                </Link>
+              </MenuItemLink>
+            </MenuItem>
+            <MenuItem>
+              <MenuItemLink>
+                <Link to="/contact" style={white}>
+                  Contact
+                </Link>
+              </MenuItemLink>
+            </MenuItem>
+          </Menu>
+        </Wrapper>
+      </Container>
+    </>
   );
 };
 

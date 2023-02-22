@@ -1,7 +1,14 @@
-//import Header from "../components/Header";
+import Navbar from '../components/NavBar';
 import Slider from '../components/Slider';
+import Footer from '../components/Footer';
 
-const Home = () => {
-  return <Slider />;
-};
+function Home() {
+  return (
+    <>
+      <Navbar />
+      <Slider />
+      <Footer />
+    </>
+  );
+}
 export default Home;

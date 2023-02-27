@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { BsArrowRightCircle } from 'react-icons/bs';
 import { BsArrowLeftCircle } from 'react-icons/bs';
-import { sliderItems } from '../data';
+import { sliderItems } from '../data/homeslider';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   width: 100%;
@@ -27,7 +28,7 @@ const Arrow = styled.div`
   padding-bottom: 30px;
   top: 0;
   bottom: 0;
-  left: ${(props) => props.direction === 'left' && '5px'};
+  left: ${(props) => props.direction === 'left' && '1px'};
   right: ${(props) => props.direction === 'right' && '1px'};
   margin: auto;
   cursor: pointer;
@@ -81,6 +82,7 @@ const InfoContainer = styled.div`
 `;
 
 const Title = styled.h1`
+  font-family: 'Gruppo', cursive;
   font-size: 25px;
   color: white;
   padding-right: 10px;
@@ -89,6 +91,7 @@ const Title = styled.h1`
   }
 `;
 const Description = styled.p`
+  font-family: 'Gruppo', cursive;
   max-width: 200px;
   margin: 10px 0px;
   font-size: 16px;
@@ -105,12 +108,13 @@ const Description = styled.p`
   }
 `;
 const Button = styled.button`
+  font-family: 'Gruppo', cursive;
   width: 225px;
   height: 30px;
   padding: 2px;
   margin-top: 10px;
   font-size: 15px;
-  border: 1px solid #ffc022df;
+  border: 2px solid #8af5fcdf;
   font-weight: 600;
   border-radius: 5px;
   background-color: white;
@@ -120,6 +124,9 @@ const Button = styled.button`
     padding: 10px;
     font-size: 20px;
   }
+`;
+const Blue = styled.p`
+  color: #274c77;
 `;
 
 const Slider = () => {
@@ -147,7 +154,11 @@ const Slider = () => {
             <InfoContainer>
               <Title>{item.title}</Title>
               <Description>{item.description}</Description>
-              <Button>See more</Button>
+              <Button>
+                <Link to={item.button}>
+                  <Blue>See more</Blue>
+                </Link>
+              </Button>
             </InfoContainer>
           </Slide>
         ))}

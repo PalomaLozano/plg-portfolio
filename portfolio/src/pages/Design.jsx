@@ -18,7 +18,6 @@ const Web = () => {
     <Container>
       <div className="App">
         <NavBar />
-        <Footer />
       </div>
     </Container>
   );

@@ -5,7 +5,7 @@ const Footer = () => {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ed6a5e;
+    background-color: #274c77;
   `;
   const Text = styled.p`
     font-weight: 600;

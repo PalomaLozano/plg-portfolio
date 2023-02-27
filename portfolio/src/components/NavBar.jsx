@@ -9,8 +9,7 @@ const Navbar = () => {
   const Container = styled.div`
     width: 100%;
     height: 70px;
-    background-color: #ed6a5e;
-
+    background-color: #ffffffd6;
     @media screen and (max-width: 768px) {
       background-color: #ffffffd6;
     }
@@ -44,7 +43,6 @@ const Navbar = () => {
     z-index: 90;
     @media screen and (max-width: 768px) {
       position: absolute;
-      background-color: #ed6a5e;
       top: 70px;
       left: ${({ open }) => (open ? '0' : '-100%')};
       width: 100%;
@@ -73,36 +71,10 @@ const Navbar = () => {
     height: 100%;
     padding: 0.5rem 2.5rem;
     font-size: 1rem;
+    color: black;
     cursor: pointer;
     transition: 0.5s all ease;
     border-radius: 5px;
-    &:hover {
-      color: transparent;
-      background-image: linear-gradient(
-        to left,
-        #f1c16d,
-        #f6b156,
-        #f6a431,
-        #eb7831,
-        #ff6200
-      );
-      background-clip: text;
-      animation: color 3s linear infinite;
-      background-size: 500%;
-    }
-
-    @keyframes color {
-      from {
-        background-position: 0% 50%;
-      }
-
-      to {
-        background-position: 100% 50%;
-      }
-    }
-    @media screen and (max-width: 768px) {
-      width: 100%;
-    }
   `;
 
   const Mobile = styled.div`
@@ -121,7 +93,7 @@ const Navbar = () => {
   };
 
   const white = {
-    color: 'white',
+    color: 'black',
   };
   return (
     <>

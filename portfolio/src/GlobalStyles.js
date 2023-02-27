@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
     }
     
     body{
-        font-family: 'Urbanist', sans-serif;
+        font-family: 'Gruppo', cursive;
         overflow-x: hidden;
 }
 `;

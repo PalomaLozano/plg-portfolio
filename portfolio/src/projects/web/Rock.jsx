@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 import { webItems } from '../../data/webprojects';
 
-const Lafarragua = () => {
+const Fluidra = () => {
   const Container = styled.div`
     width: 100%;
-    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,7 +16,6 @@ const Lafarragua = () => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     @media screen and (min-width: 768px) {
       height: 100%;
     }
@@ -32,7 +30,6 @@ const Lafarragua = () => {
 
   const Image = styled.img`
     border-radius: 10px;
-    border-bottom-right-radius: 10px solid #86e5f0;
     max-width: 70%;
     object-fit: cover;
   `;
@@ -49,8 +46,8 @@ const Lafarragua = () => {
         <Wrapper>
           {webItems.map((item) => (
             <ImgContainer>
-              <Image src={item.lafarraguaimg} />
-              <Text>{item.lafarraguadescription}</Text>
+              <Image src={item.rockimg} />
+              <Text>{item.rockdescription}</Text>
             </ImgContainer>
           ))}
         </Wrapper>
@@ -59,4 +56,4 @@ const Lafarragua = () => {
   );
 };
 
-export default Lafarragua;
+export default Fluidra;

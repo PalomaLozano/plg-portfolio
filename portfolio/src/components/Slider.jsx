@@ -11,6 +11,7 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
+
   @media screen and (min-width: 768px) {
     height: 100vh;
   }
@@ -68,6 +69,10 @@ const ImgContainer = styled.div`
 
 const Image = styled.img`
   height: 225px;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 5px;
+  box-shadow: inset 0 0 5px #925cff, 0 0 10px #925cff;
   @media screen and (min-width: 768px) {
     height: 350px;
     padding-left: 50px;
@@ -86,6 +91,7 @@ const Title = styled.h1`
   font-size: 25px;
   color: white;
   padding-right: 10px;
+  padding-top: 15px;
   @media screen and (min-width: 768px) {
     font-size: 70px;
   }
@@ -114,11 +120,10 @@ const Button = styled.button`
   padding: 2px;
   margin-top: 10px;
   font-size: 15px;
-  border: 2px solid #8af5fcdf;
-  font-weight: 600;
+  border: 2px solid #925cff;
+  box-shadow: inset 0 0 5px #925cff, 0 0 10px #925cff;
   border-radius: 5px;
   background-color: white;
-  color: #ed6a5e;
   cursor: pointer;
   @media screen and (min-width: 768px) {
     padding: 10px;
@@ -126,7 +131,9 @@ const Button = styled.button`
   }
 `;
 const Blue = styled.p`
-  color: #274c77;
+  color: black;
+  font-weight: 600;
+  font-size: 18px;
 `;
 
 const Slider = () => {

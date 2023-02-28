@@ -9,9 +9,11 @@ const Navbar = () => {
   const Container = styled.div`
     width: 100%;
     height: 70px;
-    background-color: #ffffffd6;
-    @media screen and (max-width: 768px) {
-      background-color: #ffffffd6;
+    background-color: black;
+    border-bottom: 1px solid white;
+    box-shadow: inset 0 -1px 0 0px #925cff;
+    @media screen and (max-width: 1040px) {
+      background-color: black;
     }
   `;
   const Wrapper = styled.div`
@@ -36,26 +38,28 @@ const Navbar = () => {
     font-size: 2rem;
   `;
   const Menu = styled.ul`
-    height: 100%;
     display: flex;
     justify-content: space-between;
+    overflow: hidden;
     list-style: none;
     z-index: 90;
-    @media screen and (max-width: 768px) {
+    padding: 5px;
+    @media screen and (max-width: 1040px) {
       position: absolute;
       top: 70px;
       left: ${({ open }) => (open ? '0' : '-100%')};
       width: 100%;
-      height: 90vh;
+      height: 100vh;
       justify-content: center;
       flex-direction: column;
       align-items: center;
       transition: 0.5s all ease;
+      background-color: black;
     }
   `;
   const MenuItem = styled.li`
     height: 100%;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1040px) {
       width: 100%;
       height: 70px;
       display: flex;
@@ -81,20 +85,27 @@ const Navbar = () => {
     display: none;
     padding-right: 20px;
     font-size: 25px;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1040px) {
       display: flex;
       align-items: center;
       cursor: pointer;
     }
   `;
+  const BorderMenu = styled.div`
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 3px;
+    box-shadow: inset 0 0 5px #925cff, 0 0 10px #925cff;
+  `;
 
   const style = {
-    color: 'ff8e72',
+    color: 'white',
   };
 
   const white = {
-    color: 'black',
+    color: 'white',
   };
+
   return (
     <>
       <Container>
@@ -111,35 +122,35 @@ const Navbar = () => {
             <MenuItem>
               <MenuItemLink>
                 <Link to="/" style={white}>
-                  Home
+                  <BorderMenu>Home</BorderMenu>
                 </Link>
               </MenuItemLink>
             </MenuItem>
             <MenuItem>
               <MenuItemLink>
                 <Link to="/webdevelopment" style={white}>
-                  Web Development
+                  <BorderMenu>Web Development</BorderMenu>
                 </Link>
               </MenuItemLink>
             </MenuItem>
             <MenuItem>
               <MenuItemLink>
                 <Link to="/graphicdesign" style={white}>
-                  Graphic Design
+                  <BorderMenu>Graphic Design</BorderMenu>
                 </Link>
               </MenuItemLink>
             </MenuItem>
             <MenuItem>
               <MenuItemLink>
                 <Link to="/photography" style={white}>
-                  Photography Projects
+                  <BorderMenu>Photography Projects</BorderMenu>
                 </Link>
               </MenuItemLink>
             </MenuItem>
             <MenuItem>
               <MenuItemLink>
                 <Link to="/contact" style={white}>
-                  Contact
+                  <BorderMenu>Contact</BorderMenu>
                 </Link>
               </MenuItemLink>
             </MenuItem>

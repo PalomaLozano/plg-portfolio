@@ -3,15 +3,19 @@ import React, { useState } from 'react';
 import Fluidra from '../projects/web/Fluidra';
 import Lafarragua from '../projects/web/Lafarragua';
 import Cardgenerator from '../projects/web/Cardgenerator';
+import Rick from '../projects/web/Rick';
+import Rock from '../projects/web/Rock';
 
 const WebComponent = () => {
   const [showFluidraProject, setShowFluidraProject] = useState(false);
   const [showFarraguaProject, setShowFarraguaProject] = useState(false);
   const [showCardGenerator, setShowCardGenerator] = useState(false);
+  const [showRick, setShowRick] = useState(false);
+  const [showRock, setShowRock] = useState(false);
 
   const Container = styled.div`
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -29,20 +33,21 @@ const WebComponent = () => {
     height: 100vh;
   `;
   const TextContainer = styled.div`
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 40%;
-    background-color: black;
     border-bottom: 1px solid white;
+    background-color: black;
+    cursor: pointer;
   `;
   const Text = styled.p`
     font-size: 18px;
     text-transform: capitalize;
     font-weight: bold;
-    -webkit-animation: glow 1s ease-in-out infinite alternate;
-    -moz-animation: glow 1s ease-in-out infinite alternate;
-    animation: glow 1s ease-in-out infinite alternate;
+    -webkit-animation: glow 3s ease-in-out infinite alternate;
+    -moz-animation: glow 3s ease-in-out infinite alternate;
+    animation: glow 3s ease-in-out infinite alternate;
 
     @keyframes glow {
       from {
@@ -59,6 +64,10 @@ const WebComponent = () => {
       }
     }
   `;
+  const ContainerProjects = styled.div`
+    background-color: black;
+    transition: 3s all ease;
+  `;
 
   return (
     <>
@@ -68,41 +77,72 @@ const WebComponent = () => {
             onClick={() => {
               setShowFarraguaProject(false);
               setShowCardGenerator(false);
+              setShowRick(false);
+              setShowRock(false);
               setShowFluidraProject(!showFluidraProject);
             }}
           >
             <Text>Fluidra</Text>
           </TextContainer>
-          {showFluidraProject ? <Fluidra /> : ''}
+          <ContainerProjects>
+            {showFluidraProject ? <Fluidra /> : ''}
+          </ContainerProjects>
 
           <TextContainer
             onClick={() => {
               setShowFluidraProject(false);
               setShowCardGenerator(false);
+              setShowRick(false);
+              setShowRock(false);
               setShowFarraguaProject(!showFarraguaProject);
             }}
           >
             <Text>La Farragua</Text>
           </TextContainer>
-          {showFarraguaProject ? <Lafarragua /> : ''}
+          <ContainerProjects>
+            {showFarraguaProject ? <Lafarragua /> : ''}
+          </ContainerProjects>
 
           <TextContainer
             onClick={() => {
               setShowFluidraProject(false);
               setShowFarraguaProject(false);
+              setShowRick(false);
+              setShowRock(false);
               setShowCardGenerator(!showCardGenerator);
             }}
           >
             <Text>Cards Generator</Text>
           </TextContainer>
-          {showCardGenerator ? <Cardgenerator /> : ''}
+          <ContainerProjects>
+            {showCardGenerator ? <Cardgenerator /> : ''}
+          </ContainerProjects>
 
-          <TextContainer>
+          <TextContainer
+            onClick={() => {
+              setShowFluidraProject(false);
+              setShowFarraguaProject(false);
+              setShowCardGenerator(false);
+              setShowRock(false);
+              setShowRick(!showRick);
+            }}
+          >
             <Text>Rick & Morty</Text>
           </TextContainer>
-          <TextContainer>
+          <ContainerProjects>{showRick ? <Rick /> : ''}</ContainerProjects>
+
+          <TextContainer
+            onClick={() => {
+              setShowFluidraProject(false);
+              setShowFarraguaProject(false);
+              setShowCardGenerator(false);
+              setShowRick(false);
+              setShowRock(!showRock);
+            }}
+          >
             <Text>Rock & EDM Festival</Text>
           </TextContainer>
+          <ContainerProjects>{showRock ? <Rock /> : ''}</ContainerProjects>
         </Section>
       </Container>
     </>

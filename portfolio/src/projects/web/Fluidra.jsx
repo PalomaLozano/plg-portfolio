@@ -12,12 +12,12 @@ const Fluidra = () => {
     background-color: black;
   `;
   const Wrapper = styled.div`
-    height: 100%;
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 35px;
+
     @media screen and (min-width: 768px) {
       height: 100%;
     }
@@ -32,7 +32,6 @@ const Fluidra = () => {
 
   const Image = styled.img`
     border-radius: 10px;
-    border-bottom-right-radius: 10px solid #86e5f0;
     max-width: 70%;
     object-fit: cover;
   `;

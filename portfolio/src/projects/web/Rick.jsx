@@ -1,22 +1,24 @@
 import styled from 'styled-components';
 import { webItems } from '../../data/webprojects';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 const Fluidra = () => {
   const Container = styled.div`
-    width: 100%;
-    height: 80vh;
+    width: 50vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: #d23f5a;
+    border: 3px solid #df728e;
+    box-shadow: inset 0 0 10px #e9879c, 0 0 10px #ec879f;
+    border-radius: 10px;
+    padding: 40px;
   `;
   const Wrapper = styled.div`
-    height: 500px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
     @media screen and (min-width: 768px) {
       height: 100%;
@@ -27,19 +29,17 @@ const Fluidra = () => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
   `;
 
   const Image = styled.img`
     border-radius: 10px;
-    max-width: 70%;
-    object-fit: cover;
+    max-width: 100%;
+    margin-bottom: 20px;
   `;
   const Text = styled.p`
-    height: 100%;
-    width: 70%;
     padding-top: 10px;
     color: white;
+    font-weight: bold;
   `;
 
   return (
@@ -48,7 +48,9 @@ const Fluidra = () => {
         <Wrapper>
           {webItems.map((item) => (
             <ImgContainer>
-              <Image src={item.rickimg} />
+              <Zoom>
+                <Image width="150" src={item.rickimg} />
+              </Zoom>
               <Text>{item.rickdescription}</Text>
             </ImgContainer>
           ))}

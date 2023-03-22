@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 const Footer = () => {
   const Container = styled.div`
-    height: 41px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    height: 40px;
+    background-color: #ffffff;
   `;
   const Text = styled.p`
     font-weight: 600;
-    color: #ffffff;
+    color: #bb2649;
     font-size: 12px;
   `;
   return (

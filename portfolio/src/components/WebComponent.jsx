@@ -5,21 +5,25 @@ import Lafarragua from '../projects/web/Lafarragua';
 import Cardgenerator from '../projects/web/Cardgenerator';
 import Rick from '../projects/web/Rick';
 import Rock from '../projects/web/Rock';
+import Organizer from '../projects/web/Organizer';
+import { categorySlider } from '../data/categoryslider';
+import Footer from './Footer';
 
 const WebComponent = () => {
   const [showFluidraProject, setShowFluidraProject] = useState(false);
   const [showFarraguaProject, setShowFarraguaProject] = useState(false);
   const [showCardGenerator, setShowCardGenerator] = useState(false);
   const [showRick, setShowRick] = useState(false);
+  const [showOrganizer, setShowOrganizer] = useState(false);
   const [showRock, setShowRock] = useState(false);
 
   const Container = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     position: relative;
-    overflow: hidden;
+    overflow: scroll;
     background-color: #ffff;
 
     @media screen and (min-width: 768px) {
@@ -29,45 +33,31 @@ const WebComponent = () => {
   const Section = styled.section`
     display: flex;
     flex-direction: column;
-    width: 100%;
     height: 100vh;
+    width: 100%;
   `;
   const TextContainer = styled.div`
     height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid white;
-    background-color: black;
+    border: 3px solid #fcb4c6;
+    box-shadow: inset 0 0 10px #9e213c, 0 0 10px #81162f;
+    border-radius: 10px;
+    background-color: #bb2649;
     cursor: pointer;
+    :hover {
+      background-color: #d58194;
+    }
   `;
   const Text = styled.p`
     font-size: 18px;
     text-transform: capitalize;
     font-weight: bold;
-    -webkit-animation: glow 3s ease-in-out infinite alternate;
-    -moz-animation: glow 3s ease-in-out infinite alternate;
-    animation: glow 3s ease-in-out infinite alternate;
-
-    @keyframes glow {
-      from {
-        color: #fff;
-        text-shadow: 0 0 10px #8000ff, 0 0 20px #8000ff, 0 0 30px #8000ff,
-          0 0 40px #8000ff, 0 0 50px #8000ff, 0 0 60px #8000ff, 0 0 70px #8000ff,
-          0 0 90px #8000ff;
-      }
-      to {
-        color: gray;
-        text-shadow: 0 0 20px #8000ff, 0 0 30px #8000ff, 0 0 40px #8000ff,
-          0 0 50px #8000ff, 0 0 60px #8000ff, 0 0 70px #8000ff, 0 0 80px #8000ff,
-          0 1 90px #8000ff;
-      }
-    }
+    color: white;
   `;
-  const ContainerProjects = styled.div`
-    background-color: black;
-    transition: 3s all ease;
-  `;
+  const ContainerProjects = styled.div``;
 
   return (
     <>
@@ -78,12 +68,14 @@ const WebComponent = () => {
               setShowFarraguaProject(false);
               setShowCardGenerator(false);
               setShowRick(false);
+              setShowOrganizer(false);
               setShowRock(false);
               setShowFluidraProject(!showFluidraProject);
             }}
           >
             <Text>Fluidra</Text>
           </TextContainer>
+
           <ContainerProjects>
             {showFluidraProject ? <Fluidra /> : ''}
           </ContainerProjects>
@@ -94,11 +86,13 @@ const WebComponent = () => {
               setShowCardGenerator(false);
               setShowRick(false);
               setShowRock(false);
+              setShowOrganizer(false);
               setShowFarraguaProject(!showFarraguaProject);
             }}
           >
             <Text>La Farragua</Text>
           </TextContainer>
+
           <ContainerProjects>
             {showFarraguaProject ? <Lafarragua /> : ''}
           </ContainerProjects>
@@ -109,6 +103,7 @@ const WebComponent = () => {
               setShowFarraguaProject(false);
               setShowRick(false);
               setShowRock(false);
+              setShowOrganizer(false);
               setShowCardGenerator(!showCardGenerator);
             }}
           >
@@ -117,19 +112,36 @@ const WebComponent = () => {
           <ContainerProjects>
             {showCardGenerator ? <Cardgenerator /> : ''}
           </ContainerProjects>
-
+        </Section>
+        <Section>
           <TextContainer
             onClick={() => {
               setShowFluidraProject(false);
               setShowFarraguaProject(false);
               setShowCardGenerator(false);
               setShowRock(false);
+              setShowOrganizer(false);
               setShowRick(!showRick);
             }}
           >
             <Text>Rick & Morty</Text>
           </TextContainer>
           <ContainerProjects>{showRick ? <Rick /> : ''}</ContainerProjects>
+          <TextContainer
+            onClick={() => {
+              setShowFluidraProject(false);
+              setShowFarraguaProject(false);
+              setShowCardGenerator(false);
+              setShowRick(false);
+              setShowRock(false);
+              setShowOrganizer(!showOrganizer);
+            }}
+          >
+            <Text>Organizer</Text>
+          </TextContainer>
+          <ContainerProjects>
+            {showOrganizer ? <Organizer /> : ''}
+          </ContainerProjects>
 
           <TextContainer
             onClick={() => {
@@ -137,6 +149,7 @@ const WebComponent = () => {
               setShowFarraguaProject(false);
               setShowCardGenerator(false);
               setShowRick(false);
+              setShowOrganizer(false);
               setShowRock(!showRock);
             }}
           >
@@ -145,6 +158,7 @@ const WebComponent = () => {
           <ContainerProjects>{showRock ? <Rock /> : ''}</ContainerProjects>
         </Section>
       </Container>
+      <Footer />
     </>
   );
 };

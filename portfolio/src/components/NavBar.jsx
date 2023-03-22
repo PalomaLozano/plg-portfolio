@@ -9,11 +9,9 @@ const Navbar = () => {
   const Container = styled.div`
     width: 100%;
     height: 70px;
-    background-color: black;
-    border-bottom: 1px solid white;
-    box-shadow: inset 0 -1px 0 0px #925cff;
+    background-color: #ffffff;
     @media screen and (max-width: 1040px) {
-      background-color: black;
+      background-color: #ffffff;
     }
   `;
   const Wrapper = styled.div`
@@ -54,7 +52,7 @@ const Navbar = () => {
       flex-direction: column;
       align-items: center;
       transition: 0.5s all ease;
-      background-color: black;
+      background-color: #bb2649;
     }
   `;
   const MenuItem = styled.li`
@@ -62,9 +60,6 @@ const Navbar = () => {
     @media screen and (max-width: 1040px) {
       width: 100%;
       height: 70px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       cursor: pointer;
     }
   `;
@@ -72,9 +67,10 @@ const Navbar = () => {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     height: 100%;
     padding: 0.5rem 2.5rem;
-    font-size: 1rem;
+    font-size: 20px;
     color: black;
     cursor: pointer;
     transition: 0.5s all ease;
@@ -92,14 +88,28 @@ const Navbar = () => {
     }
   `;
   const BorderMenu = styled.div`
+    color: #bb2649;
+    font-weight: 700;
     padding: 5px;
+    width: 200px;
     border: 1px solid white;
     border-radius: 3px;
-    box-shadow: inset 0 0 5px #925cff, 0 0 10px #925cff;
+    box-shadow: inset 0 0 5px #ff5c88, 0 0 10px #ff5c88;
+    background-image: #${(props) => props.bg};
+    :hover {
+      color: white;
+      transition: 0.5s all ease;
+      border: 2px solid #ff5c88;
+      border-radius: 50px;
+      background-color: #ff5c88;
+    }
+    @media screen and (max-width: 1040px) {
+      color: white;
+      font-weight: 400;
+    }
   `;
-
   const style = {
-    color: 'white',
+    color: 'BB2649',
   };
 
   const white = {
@@ -135,15 +145,8 @@ const Navbar = () => {
             </MenuItem>
             <MenuItem>
               <MenuItemLink>
-                <Link to="/graphicdesign" style={white}>
-                  <BorderMenu>Graphic Design</BorderMenu>
-                </Link>
-              </MenuItemLink>
-            </MenuItem>
-            <MenuItem>
-              <MenuItemLink>
-                <Link to="/photography" style={white}>
-                  <BorderMenu>Photography Projects</BorderMenu>
+                <Link to="/aboutme" style={white}>
+                  <BorderMenu>About me</BorderMenu>
                 </Link>
               </MenuItemLink>
             </MenuItem>

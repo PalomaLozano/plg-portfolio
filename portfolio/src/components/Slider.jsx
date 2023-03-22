@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   width: 100%;
-  height: 85vh;
+
   display: flex;
   position: relative;
   overflow: hidden;
@@ -38,7 +38,6 @@ const Arrow = styled.div`
 `;
 
 const Wrapper = styled.div`
-  height: 100%;
   display: flex;
   transition: all 1.5s ease;
   transform: translateX(${(props) => props.slideIndex * -100}vw);
@@ -49,7 +48,7 @@ const Wrapper = styled.div`
 
 const Slide = styled.div`
   width: 100vw;
-  height: 85vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,10 +68,10 @@ const ImgContainer = styled.div`
 
 const Image = styled.img`
   height: 225px;
-  border: 1px solid white;
+  border: 2px solid #fea4bc;
   border-radius: 10px;
   padding: 5px;
-  box-shadow: inset 0 0 5px #925cff, 0 0 10px #925cff;
+  box-shadow: inset 0 0 5px #ffdbe2, 0 0 10px #630e22;
   @media screen and (min-width: 768px) {
     height: 350px;
     padding-left: 50px;
@@ -120,10 +119,10 @@ const Button = styled.button`
   padding: 2px;
   margin-top: 10px;
   font-size: 15px;
-  border: 2px solid #925cff;
-  box-shadow: inset 0 0 5px #925cff, 0 0 10px #925cff;
+  border: 2px solid #fea4bc;
+  box-shadow: inset 0 0 5px #ff86a1, 0 0 10px #81162f;
   border-radius: 5px;
-  background-color: white;
+  background-color: #fff2f2;
   cursor: pointer;
   @media screen and (min-width: 768px) {
     padding: 10px;
@@ -131,7 +130,7 @@ const Button = styled.button`
   }
 `;
 const Blue = styled.p`
-  color: black;
+  color: #bb2649;
   font-weight: 600;
   font-size: 18px;
 `;
@@ -143,7 +142,7 @@ const Slider = () => {
     if (direction === 'left') {
       setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 3);
     } else {
-      setSlideIndex(slideIndex < 3 ? slideIndex + 1 : 0);
+      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
     }
   };
 
